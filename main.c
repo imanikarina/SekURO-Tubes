@@ -20,11 +20,11 @@ void decrease(int M, stats *N){
 	
     //return;
 }
-
+///
 // Fungsi warning message
 void warnings(stats *N){
 	if(happiness(*N)<5){
-		printf("are you not happy?\nhapiness level is low (%)\n",happiness(*N));
+		printf("are you not happy?\nhapiness level is low (%d)\n",happiness(*N));
 	}
 	if(health(*N)<5){
 		printf("are you sick?\nwarning health level is low(%d)\n",health(*N));
@@ -159,10 +159,11 @@ int main(){
     scanf("%d", &choice);
 
     consequences(choice, &state);
-
+	int quarterdayscount = 0;
     // Looping per pilihan
     while (choice != 10 && health(state) > 0){
         // Pengurangan stats
+        
         setHealth(&state, -1);
 
         // Memberi stats dan pilihan kegiatan
@@ -175,6 +176,19 @@ int main(){
 
         consequences(choice, &state);
         warnings(&state);
+ 		   
+        if (quarterdayscount>0 && quarterdayscount%2==0){
+        	setHygiene(&state,-1);
+        	
+		}else if(quarterdayscount>0&&quarterdayscount%3==0&&quarterdayscount%2!=0){
+			setHappiness(&state, -1);
+		}
+		
+		if(quarterdayscount%4==0){
+			setHygiene(&state,-1);
+			setSocial(&state, -1);
+		}
+        quarterdayscount ++;
     }
     
     // Pesan ketika pemain kalah

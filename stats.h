@@ -2,7 +2,8 @@
 #define STATS_H
 
 typedef struct{
-    int health, happiness, hygiene, social, money;
+    int health;
+	int happiness, hygiene, social, money;
 } stats;
 
 #define health(S) (S).health

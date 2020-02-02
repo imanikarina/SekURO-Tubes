@@ -14,7 +14,7 @@ stats makeStats(int A, int B, int C, int D, int E){
     return S;
 }
 
-// Untuk menampilkan stats
+// Untuk menampilkan stats //
 
 void printStats(stats *S){
     printf("------------------------------------------------\n");
