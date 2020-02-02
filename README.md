@@ -1,12 +1,15 @@
 # URO-Programming-Tubes
 
 Kelompok:
+
 16519114 STEI Karina Imani
+
 16519371 STEI Hafid Abi Daniswara
 
 ## GAME HILMY'S LIFE
 
 Kondisi menang  : tidak ada kondisi menang, berdasarkan info yang diberikan saat workshop.
+
 Kondisi kalah   : ketika robot memutuskan untuk mengakhiri hidupnya (mematikan sistem) atau stat health robot 0.
 
 ## KETERANGAN GAME
@@ -28,6 +31,7 @@ Fitur yang dimiliki:
  - Saat stat tertentu bernilai kurang dari 5, akan muncul warning message untuk memperingati player agar menambahkan stat tersebut
 
 Urutan commit:
+
 Terdapat kesalahan dalam menamai commit-commit pertama. Commit dibuat sebagai berikut.
  - 31/01 Base -> Karina Imani - 16519114
  - 02/02 warning has added -> Hafid Abi Daniswara - 16519371
