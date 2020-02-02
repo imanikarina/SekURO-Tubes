@@ -1,3 +1,6 @@
+#ifndef STATS_H
+#define STATS_H
+
 typedef struct{
     int health, happiness, hygiene, social, money;
 } stats;
@@ -17,3 +20,5 @@ void setHappiness(stats *S, int X);
 void setHygiene(stats *S, int X);
 void setSocial(stats *S, int X);
 void setMoney(stats *S, int X);
+
+#endif

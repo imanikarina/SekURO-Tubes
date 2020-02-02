@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include "stats.h"
+#include <stdlib.h>
 
 // Untuk membuat stats awal
 
 stats makeStats(int A, int B, int C, int D, int E){
     stats S;
-    health(S) = 10;
-    happiness(S) = 10;
-    hygiene(S) = 10;
-    social(S) = 10;
-    money(S) = 10;
+    health(S) = A;
+    happiness(S) = B;
+    hygiene(S) = C;
+    social(S) = D;
+    money(S) = E;
     return S;
 }
 
@@ -49,3 +50,4 @@ void setMoney(stats *S, int X){
     money(*S) = money(*S) + X;
     return;
 }
+

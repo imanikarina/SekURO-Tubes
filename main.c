@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "stats.h"
+#include <string.h>
 
 // Fungsi menampilkan pilihan
 void printChoices(){
@@ -16,19 +17,35 @@ void printChoices(){
 
 // Fungsi pengurangan stats
 void decrease(int M, stats *N){
-    return;
+	
+    //return;
 }
 
 // Fungsi warning message
 void warnings(stats *N){
-    return;
+	if(happiness(*N)<5){
+		printf("are you not happy?\nhapiness level is low (%)\n",happiness(*N));
+	}
+	if(health(*N)<5){
+		printf("are you sick?\nwarning health level is low(%d)\n",health(*N));
+	}
+	if(hygiene(*N)<5){
+		printf("have you take a bath?\nwarning hygine level is low(%d)\n",hygiene(*N));
+	}
+	if(money(*N)<5){
+		printf("you have less money now, ur money is %d\n",money(*N));
+	}
+	if(social(*N)<5){
+		printf("please don't be antisocial. your social level is %d\n",social(*N));
+	} 
+    //return;
 }
 
 // Fungsi akibat pilihan
 void consequences(int M, stats *N){
     if (M == 1){
         if (health(*N) < 18 && money(*N) > 0){
-            setHealth(N, 3);
+            //setHealth(N, 3);
             setMoney(N, -1);
         } else if (money(*N) > 0){
             health(*N) = 20;
@@ -144,7 +161,7 @@ int main(){
     consequences(choice, &state);
 
     // Looping per pilihan
-    while (choice != 10 && health(state) > 1){
+    while (choice != 10 && health(state) > 0){
         // Pengurangan stats
         setHealth(&state, -1);
 
@@ -157,6 +174,7 @@ int main(){
         scanf("%d", &choice);
 
         consequences(choice, &state);
+        warnings(&state);
     }
     
     // Pesan ketika pemain kalah
