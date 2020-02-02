@@ -1,16 +1,16 @@
 #include <stdio.h>
-#include "stats.h"
 #include <string.h>
+#include "stats.h"
 
 // Fungsi menampilkan pilihan
 void printChoices(){
     printf("------------------------------------------------\n");
     printf("                PILIHAN KEGIATAN                \n");
     printf("------------------------------------------------\n");
-    printf("1.  Makan sandwich      6.  Pergi ke dokter\n");
-    printf("2.  Main board game     7.  Pergi ke bioskop\n");
-    printf("3.  Sikat gigi          8.  Santai di sekre UKJ\n");
-    printf("4.  Mandi               9.  Kerja part-time\n");
+    printf("1.  Makan sandwich      6.  Pergi ke dokter     \n");
+    printf("2.  Main board game     7.  Pergi ke bioskop    \n");
+    printf("3.  Sikat gigi          8.  Santai di sekre UKJ \n");
+    printf("4.  Mandi               9.  Kerja part-time     \n");
     printf("5.  Cek LINE            10. Matikan sistem robot\n\n");
     return;
 }
@@ -146,6 +146,22 @@ void consequences(int M, stats *N){
 }
 
 int main(){
+    // Title card
+    printf("\n");
+    printf("------------------------------------------------\n");
+    printf(" XX    XX XX XX     XX    XX XX    XX XX XXXXXX \n");
+    printf(" XX    XX XX XX     XXX  XXX  XX  XX   X XX     \n");
+    printf(" XXXXXXXX XX XX     XXXXXXXX   XXXX      XXXXXX \n");
+    printf(" XX    XX XX XX     XX XX XX    XX           XX \n");
+    printf(" XX    XX XX XXXXXX XX    XX    XX       XXXXXX \n");
+
+    printf("           XX     XX XXXXXX XXXXXX XX           \n");
+    printf("           XX     XX XX     XX     XX           \n");
+    printf("           XX     XX XXXXXX XXXXXX XX           \n");
+    printf("           XX     XX XX     XX                  \n");
+    printf("           XXXXXX XX XX     XXXXXX XX           \n");
+    printf("------------------------------------------------\n\n");
+
     // Memberi nilai awal untuk semua stats (50%)
     int choice;
     stats state = makeStats(10, 10, 10, 10, 10);
@@ -158,8 +174,12 @@ int main(){
     printf("Apa yang akan dilakukan Hilmys hari ini? ");
     scanf("%d", &choice);
 
+    // Konsekuensi pertama
     consequences(choice, &state);
+
+    // Deklarasi variabel hari
 	int quarterdayscount = 0;
+
     // Looping per pilihan
     while (choice != 10 && health(state) > 0){
         // Pengurangan stats
